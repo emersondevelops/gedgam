@@ -5,20 +5,53 @@
 
 <div>
 
-    <h1>Adicionar Game</h1>
+    <h1>Editar game</h1>
 
     <br>
-    <form method="post">
-
-        {% csrf_token %}
-        {{ form.as_p }}
+<form method="post"> {% csrf_token %}
+        <div class="form-group">
+            <label for="titulo">Título</label>
+            <input type="text" class="form-control" id="titulo" name="titulo" value="{{ game.titulo }}">
+        </div>
+        <div class="form-group">
+            <label for="ano_lancamento">Ano de lançamento</label>
+            <input type="text" class="form-control" id="ano_lancamento" name="ano_lancamento" value="{{ game.ano_lancamento }}">
+        </div>
+        <div class="form-group">
+            <label for="produtora">Produtora</label>
+            <input type="text" class="form-control" id="produtora" name="produtora" value="{{ game.produtora }}">
+        </div>
+        <div class="form-group">
+        <label for="plataforma">Plataforma</label>
+        <select class="form-control" name="plataforma">
+                <option value="PC">PC</option> 
+                <option value="XB">Xbox One</option>
+                <option value="PS">Play Station 4</option>
+                <option value="NS">Nintendo Switch</option>
+        </select>
+        </div>
+        <div class="form-group">
+        <label for="zerado">Zerado</label>
+        <select class="form-control" name="zerado">
+                <option value="S">Sim</option> 
+                <option value="N">Não</option>
+                <option value="O">Não se aplica</option>
+        </select>
+        </div>
+        <div class="form-group">
+            <label for="data_zeramento">Data de zeramento</label>
+            <input type="date" class="form-control" id="data_zeramento" name="data_zeramento" value="{{ game.data_zeramento }}">
+        </div>
+        <div class="form-group">
+            <label for="comentarios">Comentários</label>
+            <textarea rows="3" class="form-control" id="comentarios" name="comentarios" value="{{ game.produtora }}"></textarea>
+        </div>
 
         <button type="submit" class="btn btn-success">Atualizar</button>
-
     </form>
 
     <br>
-    <a href="{% url 'game_list' %}"><button class="btn btn-primary">Voltar</button></a>
+    <a href="{% url 'game_list' %}"><button class="btn btn-secondary">Voltar</button></a>
 
 </div>
 <br>

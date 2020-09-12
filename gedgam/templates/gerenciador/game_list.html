@@ -1,52 +1,48 @@
 {% extends '../base.html' %}
 {% load static %}
+
 {% block content %}
-
 <div>
-    <h1>Lista de games</h1>
+    <h1>Lista de games</h1><br>
 
-    <br>
     <table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Título</th>
-            <th>Lançamento</th>
-            <th>Produtora</th>
-            <th>Plataforma</th>
-            <th>Zerado</th>
-            <th>Dada de zeramento</th>
-            <th>Comentários</th>
-            <th>Ações</th>
-        </tr>
-    </thead>
-    <tbody>
-    {% for game in games %}
-        <tr>
-            <td>{{ game.titulo }}</td>
-            <td>{{ game.ano_lancamento }}</td>
-            <td>{{ game.produtora }}</td>
-            <td>{{ game.plataforma }}</td>
-            <td>{{ game.zerado }}</td>
-            <td>{{ game.data_zeramento }}</td>
-            <td>{{ game.comentarios }}</td>
-            <td>
-                <a href="{% url 'game_update' pk=game.id %}"><button class="btn btn-success">Editar</button></a>
-                <a href="{% url 'game_delete' pk=game.id %}"><button class="btn btn-danger">Remover</button></a>
-            </td>
-        </tr>
-    {% endfor %}
-    <tfoot>
-    <tr>
-    <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-    <td>
-    <a href="{% url 'game_create' %}"><button class="btn btn-primary">Adicionar</button></a>
-    </td>
-    </tr>
-    </tfoot>
-    </tbody>
-</table>
-
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Lançamento</th>
+                <th>Produtora</th>
+                <th>Plataforma</th>
+                <th>Zerado</th>
+                <th>Dada de zeramento</th>
+                <th>Comentários</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+            <tbody>
+                {% for game in games %}
+                <tr>
+                    <td>{{ game.titulo }}</td>
+                    <td>{{ game.ano_lancamento }}</td>
+                    <td>{{ game.produtora }}</td>
+                    <td>{{ game.plataforma }}</td>
+                    <td>{{ game.zerado }}</td>
+                    <td>{{ game.data_zeramento }}</td>
+                    <td>{{ game.comentarios }}</td>
+                    <td>
+                        <a href="{% url 'game_update' pk=game.id %}"><button class="btn btn-success">Editar</button></a>
+                        <a href="{% url 'game_delete' pk=game.id %}"><button class="btn btn-danger">Remover</button></a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    <td>
+                    <a href="{% url 'game_create' %}"><button class="btn btn-primary">Adicionar</button></a>
+                    </td>
+                </tr>
+            </tfoot>        
+    </table>
 </div>
-<br>
-
 {% endblock %}

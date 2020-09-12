@@ -5,6 +5,10 @@ body {
   background-attachment:fixed;
 }
 
+.miniatura {
+  height: 50px;
+}
+
 h1 {
   margin: 20px;
   text-align: center;

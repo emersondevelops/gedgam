@@ -8,6 +8,7 @@
     <table class="table table-striped">
         <thead>
             <tr>
+                <th>Imagem</th>
                 <th>Título</th>
                 <th>Lançamento</th>
                 <th>Produtora</th>
@@ -21,6 +22,11 @@
             <tbody>
                 {% for game in games %}
                 <tr>
+                    <td>
+                    {% if game.imagem.url != None %}
+                    <a href="{{ game.imagem.url }}"><img src="{{ game.imagem.url }}" class="miniatura"></a>
+                    {% endif %}
+                    </td>
                     <td>{{ game.titulo }}</td>
                     <td>{{ game.ano_lancamento }}</td>
                     <td>{{ game.produtora }}</td>
@@ -37,7 +43,7 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    <td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
                     <td>
                     <a href="{% url 'game_create' %}"><button class="btn btn-primary">Adicionar</button></a>
                     </td>

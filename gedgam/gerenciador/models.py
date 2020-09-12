@@ -24,3 +24,4 @@ class Game(models.Model):
     zerado = models.CharField(max_length=20, choices=ZERADO, default='--')
     data_zeramento = models.DateField(blank=True, null=True)
     comentarios = models.TextField(blank=True, null=True)
+    imagem = models.ImageField(null=True, blank=True, upload_to="images/")

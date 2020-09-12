@@ -1,17 +1,18 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <title>Remover Game</title>
-</head>
-<body>
-<h1>Remover Game</h1>
-<a href="{% url 'game_list' %}">Ir para lista de games</a>
+{% extends '../base.html' %}
+{% load static %}
 
+{% block content %}
+<div>
+<h1>Remover Game</h1>
+
+<br>
 <form method="post">{% csrf_token %}
     <p>Tem certeza que quer excluir "{{ game.titulo }}"?</p>
-    <input type="submit" value="Confirmar">
+    <button type="submit" class="btn btn-danger">Sim</button>    
 </form>
 
-</body>
-</html>
+<br>
+<a href="{% url 'game_list' %}"><button class="btn btn-primary">Voltar</button></a>
+
+</div>
+{% endblock %}

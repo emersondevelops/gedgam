@@ -1,24 +1,21 @@
-<!DOCTYPE html>
-<html lang="pt">
+{% extends '../base.html' %}
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>Adicionar Game</title>
-</head>
+{% block content %}
+<div>
 
-<body>
-
-    <h1>Adicionar Game</h1>
-
-    <form method="post">
+    <h1>Adicionar game</h1>
+    <br>
+    <form method="post" class="form-group">
 
         {% csrf_token %}
         {{ form.as_p }}
 
-        <button type="submit">Adicionar</button>
-
+        <button type="submit" class="btn btn-success">Adicionar</button>
     </form>
 
-</body>
+    <br>
+    <a href="{% url 'game_list' %}"><button class="btn btn-primary">Voltar</button></a>
 
-</html>
+</div>
+{% endblock %}

@@ -1,27 +1,44 @@
-<!DOCTYPE html>
-<html lang="pt">
+{% extends '../base.html' %}
+{% load static %}
+{% block content %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>Lista de Games</title>
-</head>
+<div>
+    <h1>Lista de games</h1>
 
-<body>
+    <table class="table">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Lançamento</th>
+            <th>Produtora</th>
+            <th>Plataforma</th>
+            <th>Zerado</th>
+            <th>Dada de zeramento</th>
+            <th>Comentários</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for game in games %}
+        <tr>
+            <td>{{ game.titulo }}</td>
+            <td>{{ game.ano_lancamento }}</td>
+            <td>{{ game.produtora }}</td>
+            <td>{{ game.plataforma }}</td>
+            <td>{{ game.zerado }}</td>
+            <td>{{ game.data_zeramento }}</td>
+            <td>{{ game.comentarios }}</td>
+            <td>
+                <a href="{% url 'game_update' pk=game.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
+                <a href="{% url 'game_delete' pk=game.id %}"><span class="glyphicon glyphicon-trash"></span></a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
 
-    <h1>Lista de Games</h1>
+</div>
 
-    <a href="{% url 'game_create' %}">Adicionar um novo game</a>
+<a href="{% url 'game_create' %}"><button class="btn btn-primary">Adicionar</button></a>
 
-    <ul>
-        {% for game in games %}
-        <li>
-            Título: {{ game.titulo }} | Lançamento: {{ game.ano_lancamento }} | Produtora: {{ game.produtora }} | Plataforma: {{ game.plataforma }} | Zerado: {{ game.zerado }} | Data de zeramento: {{ game.data_zeramento }} | Comentários: {{ game.comentarios }}
-            <a href="{% url 'game_update' pk=game.id %}">Editar</a> 
-            <a href="{% url 'game_delete' pk=game.id %}">Remover</a>
-        </li>
-        {% endfor %}
-    </ul>
-
-</body>
-
-</html>
+{% endblock %}

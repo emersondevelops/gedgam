@@ -11,7 +11,7 @@
     <h1>Lista de Games</h1>
 
         {% for game in games %}
-        <li>Título: {{ game.titulo }}</li>
+        <li>Título: {{ game.titulo }} <a href="{% url 'game_delete' pk=game.id %}">Remover</a></li>
         {% endfor %}
 
 </body>

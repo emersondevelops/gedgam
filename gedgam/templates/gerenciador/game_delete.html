@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Remover Game</title>
+</head>
+<body>
+<h1>Remover Game</h1>
+<a href="{% url 'game_list' %}">Ir para lista de games</a>
+
+<form method="post">{% csrf_token %}
+    <p>Tem certeza que quer excluir "{{ game.titulo }}"?</p>
+    <input type="submit" value="Confirmar">
+</form>
+
+</body>
+</html>

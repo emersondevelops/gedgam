@@ -11,10 +11,14 @@
     <h1>Lista de Games</h1>
 
     <a href="{% url 'game_create' %}">Adicionar um novo game</a>
-    
+
     <ul>
         {% for game in games %}
-        <li>Título: {{ game.titulo }} <a href="{% url 'game_delete' pk=game.id %}">Remover</a></li>
+        <li>
+            Título: {{ game.titulo }} 
+            <a href="{% url 'game_update' pk=game.id %}">Editar</a> 
+            <a href="{% url 'game_delete' pk=game.id %}">Remover</a>
+        </li>
         {% endfor %}
     </ul>
 

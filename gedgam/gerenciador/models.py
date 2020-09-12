@@ -3,7 +3,7 @@ from django.db import models
 
 class Game(models.Model):
     titulo = models.CharField(max_length=100)
-    ano_lancamento = models.IntegerField(blank=True)
+    ano_lancamento = models.IntegerField(blank=True, null=True)
     produtora = models.CharField(max_length=50, blank=True, null=True)
     PLATAFORMA = (
         ('PC', 'PC'),

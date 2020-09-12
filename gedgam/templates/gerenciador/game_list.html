@@ -5,6 +5,7 @@
 <div>
     <h1>Lista de games</h1>
 
+    <br>
     <table class="table">
     <thead>
         <tr>
@@ -29,16 +30,23 @@
             <td>{{ game.data_zeramento }}</td>
             <td>{{ game.comentarios }}</td>
             <td>
-                <a href="{% url 'game_update' pk=game.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
-                <a href="{% url 'game_delete' pk=game.id %}"><span class="glyphicon glyphicon-trash"></span></a>
+                <a href="{% url 'game_update' pk=game.id %}"><button class="btn btn-success">Editar</button></a>
+                <a href="{% url 'game_delete' pk=game.id %}"><button class="btn btn-danger">Remover</button></a>
             </td>
         </tr>
     {% endfor %}
+    <tfoot>
+    <tr>
+    <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+    <td>
+    <a href="{% url 'game_create' %}"><button class="btn btn-primary">Adicionar</button></a>
+    </td>
+    </tr>
+    </tfoot>
     </tbody>
 </table>
 
 </div>
-
-<a href="{% url 'game_create' %}"><button class="btn btn-primary">Adicionar</button></a>
+<br>
 
 {% endblock %}

@@ -15,7 +15,7 @@
     <ul>
         {% for game in games %}
         <li>
-            Título: {{ game.titulo }} 
+            Título: {{ game.titulo }} | Lançamento: {{ game.ano_lancamento }} | Produtora: {{ game.produtora }} | Plataforma: {{ game.plataforma }} | Zerado: {{ game.zerado }} | Data de zeramento: {{ game.data_zeramento }} | Comentários: {{ game.comentarios }}
             <a href="{% url 'game_update' pk=game.id %}">Editar</a> 
             <a href="{% url 'game_delete' pk=game.id %}">Remover</a>
         </li>

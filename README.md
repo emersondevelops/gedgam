@@ -2,9 +2,9 @@
 Versão preview: ainda pode sofrer alerações até o final do prazo do desafio.
 
 
-## Gedgame - Gerenciador de games
+## Gedgam - Gerenciador de games
 
-O Gedgame é um sistema de gerenciamento para aqueles que adoram jogos e querem manter os registros dos jogos que possui, quando zerou, comentários sobre eles, dentre outras funcionalidades.
+O Gedgam é um sistema de gerenciamento para aqueles que adoram jogos e querem manter os registros dos jogos que possui, quando zerou, comentários sobre eles, dentre outras funcionalidades.
 
 
 ### Prévia

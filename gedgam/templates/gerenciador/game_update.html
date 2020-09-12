@@ -9,7 +9,7 @@
 
     <br>
     <div class="formulario">
-<form method="post"> {% csrf_token %}
+    <form method="post"> {% csrf_token %}
         <div class="form-group">
             <label for="titulo">Título</label>
             <input type="text" class="form-control" id="titulo" name="titulo" value="{{ game.titulo }}">
@@ -25,18 +25,21 @@
         <div class="form-group">
         <label for="plataforma">Plataforma</label>
         <select class="form-control" name="plataforma">
+                <option value="--">--</option> 
                 <option value="PC">PC</option> 
-                <option value="XB">Xbox One</option>
-                <option value="PS">Play Station 4</option>
-                <option value="NS">Nintendo Switch</option>
+                <option value="Xbox One">Xbox One</option>
+                <option value="Play Station 4">Play Station 4</option>
+                <option value="Nintendo Switch">Nintendo Switch</option>
+                <option value="Outra">Outra</option>
         </select>
         </div>
         <div class="form-group">
         <label for="zerado">Zerado</label>
         <select class="form-control" name="zerado">
-                <option value="S">Sim</option> 
-                <option value="N">Não</option>
-                <option value="O">Não se aplica</option>
+                <option value="--">--</option> 
+                <option value="Sim">Sim</option> 
+                <option value="Não">Não</option>
+                <option value="Não se aplica">Não se aplica</option>
         </select>
         </div>
         <div class="form-group">
@@ -45,7 +48,7 @@
         </div>
         <div class="form-group">
             <label for="comentarios">Comentários</label>
-            <textarea rows="3" class="form-control" id="comentarios" name="comentarios" value="{{ game.produtora }}"></textarea>
+            <textarea rows="3" class="form-control" id="comentarios" name="comentarios">{{ game.comentarios }}</textarea>
         </div>
 
         <button type="submit" class="btn btn-success">Atualizar</button>

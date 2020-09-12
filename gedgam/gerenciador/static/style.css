@@ -1,5 +1,8 @@
 body {
-  background-color: dodgerblue;
+  background-image: url("./img/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment:fixed;
 }
 
 h1 {
@@ -9,10 +12,10 @@ h1 {
 }
 
 .conteudo_principal {
-  margin-top: 50px;
+  margin-top: 150px;
   margin-bottom: 50px;
-  margin-right: 50px;
-  margin-left: 50px;
+  margin-right: 60px;
+  margin-left: 60px;
   background-color: white;
   padding: 20px;
   border-style: solid;

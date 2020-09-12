@@ -6,17 +6,21 @@ class Game(models.Model):
     ano_lancamento = models.IntegerField(blank=True, null=True)
     produtora = models.CharField(max_length=50, blank=True, null=True)
     PLATAFORMA = (
+        ('--', '--'),
         ('PC', 'PC'),
-        ('XB', 'Xbox One'),
-        ('PS', 'Play Station 4'),
-        ('NS', 'Nintendo Switch')
+        ('Xbox One', 'Xbox One'),
+        ('Play Station 4', 'Play Station 4'),
+        ('Nintendo Switch', 'Nintendo Switch'),
+        ('Outra', 'Outra')
     )
-    plataforma = models.CharField(max_length=20, choices=PLATAFORMA)
+    plataforma = models.CharField(
+        max_length=20, choices=PLATAFORMA, default='--')
     ZERADO = (
-        ('S', 'Sim'),
-        ('N', 'Não'),
-        ('O', 'Não se aplica'),
+        ('--', '--'),
+        ('Sim', 'Sim'),
+        ('Não', 'Não'),
+        ('Não se aplica', 'Não se aplica'),
     )
-    zerado = models.CharField(max_length=1, choices=ZERADO)
+    zerado = models.CharField(max_length=20, choices=ZERADO, default='--')
     data_zeramento = models.DateField(blank=True, null=True)
     comentarios = models.TextField(blank=True, null=True)

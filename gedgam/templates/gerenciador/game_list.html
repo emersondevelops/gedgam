@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Games</title>
+</head>
+
+<body>
+
+    <h1>Lista de Games</h1>
+
+        {% for game in games %}
+        <li>Título: {{ game.titulo }}</li>
+        {% endfor %}
+
+</body>
+
+</html>

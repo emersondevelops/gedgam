@@ -1,5 +1,5 @@
 # Desafio - Fábrica de Software - Backend
-Versão preview: ainda pode sofrer alerações até o final do prazo do desafio.
+Versão preview: ainda pode sofrer alterações até o final do prazo do desafio.
 
 
 ## Gedgam - Gerenciador de games

@@ -32,7 +32,11 @@
                     <td>{{ game.produtora }}</td>
                     <td>{{ game.plataforma }}</td>
                     <td>{{ game.zerado }}</td>
+                    {% if game.data_zeramento != None %}
                     <td>{{ game.data_zeramento }}</td>
+                    {% else %}
+                    <td></td>
+                    {% endif %}
                     <td>{{ game.comentarios }}</td>
                     <td>
                         <a href="{% url 'game_update' pk=game.id %}"><button class="btn btn-success">Editar</button></a>

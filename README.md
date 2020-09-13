@@ -17,11 +17,11 @@ O Gedgam é um sistema de gerenciamento para aqueles que adoram jogos e querem m
 
 Clone o projeto em sua máquina local:
 
-`git clone --branch emerson-bezerra https://gitlab.com/matheusk181/desafio-fabrica-de-software.git`
+`git clone --branch emerson-bezerra https://github.com/emersondevelops/gedgam.git`
 
-Acesse a pasta do projeto:
+Acesse a pasta do repositório:
 
-`cd desafio-fabrica-de-software`
+`cd gedgam`
 
 Instale as dependências necessárias:
 
